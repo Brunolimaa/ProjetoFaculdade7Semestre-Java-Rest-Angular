@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RequestMapping(value="/alunos")
 @RestController
-@Api(value="onlinestore", description="Operations pertaining to products in Online Store")
+@Api(value="alunos")
 public class AlunoResource {
 	
 	@Autowired

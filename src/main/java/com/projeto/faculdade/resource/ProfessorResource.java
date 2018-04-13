@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RequestMapping(value="/professores")
 @RestController
-@Api(value="onlinestore", description="Professores")
+@Api(value="Professores")
 public class ProfessorResource {
 	
 	@Autowired
