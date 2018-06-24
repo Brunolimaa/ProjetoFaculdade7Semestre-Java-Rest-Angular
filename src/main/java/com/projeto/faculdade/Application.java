@@ -1,5 +1,9 @@
 package com.projeto.faculdade;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,11 +30,22 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		Aluno aluno = new Aluno(null, "Bruno Lima", "Sistemas de Informacao");
-		Aluno aluno1 = new Aluno(null, "Teste", "Engenharia Civil");		
-		Professor professor = new Professor(null,"Willian");
+		
+		//professoreRepo.save(professor);
+		//professoreRepo.save(professor1);
+
+		Aluno aluno = new Aluno(null, "Bruno Lima", "Sistemas de Informacao", 2);
+		Aluno aluno1 = new Aluno(null, "Teste", "Engenharia Civil", 1);		
+
+		Professor professor = new Professor(null,"Willian", Arrays.asList(aluno, aluno1));
+		Professor professor1 = new Professor(null,"Walter", Arrays.asList(aluno1));
+		List<Professor> lista = new ArrayList<>();
+		lista.add(professor);
+
 		
 		professoreRepo.save(professor);
+		professoreRepo.save(professor1);
+
 		repo.save(aluno);
 		repo.save(aluno1);
 	}
